@@ -1,3 +1,5 @@
+
+
 get "/create_post" do
 	erb :create_post
 end
@@ -7,25 +9,33 @@ post "/create_post" do
                body: params[:body])
 
   params[:category].split(",").each do |c|
-    c = c.strip
-    if Tag.find_by_category(c) == nil
-      t = Tag.create(category: c)
-      p.tags << t
-    else
-      p.tags << Tag.find_by_category(c)
-    end
+    p.tags << Tag.find_or_create_by_category(c.strip)
   end
 
   redirect to "/"
 end
 
+get "/get_post" do
+  erb :get_post
+end
 
+post "/get_post" do
+  redirect to "/edit_post/#{params[:id]}"
+end
 
-
-
-get "/edit_post" do
+get "/edit_post/:post_id" do
+  @p = Post.find_by_id(params[:post_id])
   erb :edit_post
 end
+
+
+
+
+
+
+
+
+
 
 get "/post" do
   erb :post

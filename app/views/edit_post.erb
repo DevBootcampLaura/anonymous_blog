@@ -1,1 +1,11 @@
-edit a post
+
+<div class="container">
+	<form action="/create_post" method="post"><br>
+		Title:<input type="text" name="title" value="<%= "#{@p.title}" %>"><br>
+		Content:<br>
+		<textarea cols="40" rows="5" name="body"><%= "#{@p.body}" %></textarea><br>
+		Tags:<input type="text" name="category"><br>
+		<input type="submit" value="Update Post"><br>
+	</form><br>
+	<a href="../">Return Home</a>
+</div>
