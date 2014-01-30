@@ -1,4 +1,4 @@
-
+require 'pry'
 
 get "/create_post" do
 	erb :create_post
@@ -26,6 +26,14 @@ end
 get "/edit_post/:post_id" do
   @p = Post.find_by_id(params[:post_id])
   erb :edit_post
+end
+
+post "/edit_post" do
+  @p = Post.find_by_id(params[:id])
+  @p.update_attributes(title: params[:title], body: params[:body])
+  @p.save
+  binding.pry
+  redirect to "/"
 end
 
 

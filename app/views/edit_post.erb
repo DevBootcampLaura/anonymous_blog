@@ -1,6 +1,7 @@
-
+<%= "#{@p.id}" %>
 <div class="container">
-	<form action="/create_post" method="post"><br>
+	<form action="/edit_post" method="post"><br>
+		<input type="hidden" name="id" value="<%= "#{@p.id}" %>">
 		Title:<input type="text" name="title" value="<%= "#{@p.title}" %>"><br>
 		Content:<br>
 		<textarea cols="40" rows="5" name="body"><%= "#{@p.body}" %></textarea><br>
