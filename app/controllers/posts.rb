@@ -15,12 +15,12 @@ post "/create_post" do
   redirect to "/"
 end
 
-get "/get_post" do
-  erb :get_post
-end
-
 post "/get_post" do
   redirect to "/edit_post/#{params[:id]}"
+end
+
+post "/post" do
+  redirect to "/post/#{params[:id]}"
 end
 
 get "/edit_post/:post_id" do
@@ -32,20 +32,11 @@ post "/edit_post" do
   @p = Post.find_by_id(params[:id])
   @p.update_attributes(title: params[:title], body: params[:body])
   @p.save
-  binding.pry
   redirect to "/"
 end
 
-
-
-
-
-
-
-
-
-
-get "/post" do
+get "/post/:post_id" do
+  @p = Post.find_by_id(params[:post_id])
   erb :post
 end
 

@@ -2,10 +2,27 @@
   <h1>WELCOME TO THE ANONYMOUS BLOG!</h1>
   <h3>What would you like to do?</h3>
 
- <a href="../create_post">Create An Anonymous Post</a><br>
- <a href="../get_post">Edit A Post</a><br>
- <a href="../post">View A Post</a><br>
- <a href="../view_all">Read The Blog</a><br>
- <a href="../view_by_tag">View By Tag</a>
+
+ <form name="create" action="/create_post" method="get">
+   <input type="submit" value="Create An Anonymous Post">
+ </form><br>
+
+ <form name="edit" action="/get_post" method="post">
+   Post Number:<input type="text" size="1" name="id">
+   <input type="submit" value="Edit Post">
+ </form><br>
+
+ <form name="view" action="/post" method="post">
+   Post Number:<input type="text" size="1" name="id">
+   <input type="submit" value="View Post">
+ </form><br>
+
+ <form name="read" action="/view_all" method="get">
+   <input type="submit" value="Read The Blog">
+ </form><br>
+
+ <form name="tag" action="/view_by_tag" method="get">
+   <input type="submit" value="View Post By Tag">
+ </form><br>
 
 </div>
