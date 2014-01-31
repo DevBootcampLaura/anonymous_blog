@@ -31,6 +31,9 @@ end
 post "/edit_post" do
   @p = Post.find_by_id(params[:id])
   @p.update_attributes(title: params[:title], body: params[:body])
+  params[:category].split(",").each do |c|
+    @p.tags << Tag.find_or_create_by_category(c.strip)
+  end
   @p.save
   redirect to "/"
 end

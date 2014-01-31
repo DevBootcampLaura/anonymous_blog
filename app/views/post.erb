@@ -2,5 +2,8 @@
 	<h2><%= "#{@p.title.upcase}" %></h2>
 		<p>Written by:<%= "#{@p.author}" %></p>
 		<p><%= "#{@p.body}" %></p>
+		Tags:    <% @p.tags.each do |t| %>
+					<%= "#{t.category}" %>
+				 <% end %><br><br>
 	<a href="../">Return Home</a>
 </div>
