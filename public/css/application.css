@@ -1,9 +1,36 @@
 .container {
-  margin: 20px auto;
+  margin: 0px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
 th {
   text-align: left;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.header a {
+  position: fixed;
+  width: 100%;
+  padding-left: 28%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: yellow;
+  text-decoration: none; 
+  font-family: 'Freckle Face', cursive;
+  font-size: 50px;
+  font-weight: 100;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+  text-shadow: 0px 0px 13px #99AAAA;
+}
+
+.page_content {
+  padding-top: 14%;
 }
