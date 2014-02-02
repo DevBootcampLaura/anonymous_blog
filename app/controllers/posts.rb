@@ -43,6 +43,25 @@ get "/post/:post_id" do
   erb :post
 end
 
-get "/view_all" do
+get "/view_all" do  
   erb :view_all
 end
+
+post "/tag" do
+  redirect to "/tag/#{params[:category]}"
+end
+
+get "/tag/:category" do
+  tag = Tag.find_by_category(params[:category])
+  @posts = []
+  Post.all.each do |post|
+    @posts << post if post.tags.include?(tag)
+  end
+
+  erb :tag
+end
+
+
+
+
+
