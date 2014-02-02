@@ -8,6 +8,11 @@ get "/create_post" do
 	erb :create_post
 end
 
+get "/create_post/error" do
+  @error = "The post you have created is invalid. Title and post fields may not be empty."
+  erb :create_post
+end 
+
 get "/edit_post/:post_id" do
   @post = Post.find_by_id(params[:post_id])
   erb :edit_post
@@ -37,13 +42,16 @@ end
 # post routes =====================================
 
 post "/create_post" do
-  p = Post.create(params[:post])
+  post = Post.create(params[:post])
 
-  params[:tag].values.join.split(" ").each do |c|
-    p.tags << Tag.find_or_create_by_category(c.strip)
+  if post.valid?
+    params[:tag].values.join.split(" ").each do |c|
+      post.tags << Tag.find_or_create_by_category(c.strip)
+    end
+    redirect to "/post/#{post.id}"
+  else
+    redirect to "/create_post/error"
   end
-
-  redirect to "/post/#{p.id}"
 end
 
 post "/get_post" do
@@ -51,6 +59,7 @@ post "/get_post" do
 end
 
 post "/post" do
+  @error = "The post you have made is invalid."
   redirect to "/post/#{params[:id]}"
 end
 
