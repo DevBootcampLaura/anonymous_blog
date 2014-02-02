@@ -1,11 +1,7 @@
 <div class="container">
 	<form action="/edit_post" method="post"><br>
-		<input type="hidden" name="id" value="<%= "#{@p.id}" %>">
-		Title:<input type="text" name="title" value="<%= "#{@p.title}" %>"><br>
-		Content:<br>
-		<textarea cols="40" rows="5" name="body"><%= "#{@p.body}" %></textarea><br>
-		Tags:<input type="text" name="category"><br>
-		<input type="submit" value="Update Post"><br>
+		<input type="hidden" name="id" value="<%= "#{@post.id}" %>">
+		<%= erb :_form_fields, layout: false %>
 	</form><br>
 	<a href="../">Return Home</a>
 </div>

@@ -3,4 +3,5 @@ class Post < ActiveRecord::Base
   has_many :tags, through: :post_tags 
 
   validates :body, :title, :presence => true
+
 end
