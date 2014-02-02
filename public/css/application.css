@@ -2,7 +2,8 @@
   margin: 0px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px dotted yellow;
+  border-radius: 50%;
 }
 th {
   text-align: left;
@@ -11,6 +12,16 @@ th {
 body {
   margin: 0px;
   padding: 0px;
+  height: 100%;
+  background: url('../paper.png');
+  background-repeat: repeat;
+  opacity: 0.7;
+}
+
+.color {
+  background-color: #99AAAA;
+  height: 100%;
+  padding-bottom: 20%;
 }
 
 
@@ -20,17 +31,32 @@ body {
   padding-left: 28%;
   padding-top: 2%;
   padding-bottom: 2%;
-  background-color: yellow;
+  background-color: #666699;
   text-decoration: none; 
   font-family: 'Freckle Face', cursive;
   font-size: 50px;
   font-weight: 100;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-color: yellow;
   color: transparent;
-  text-shadow: 0px 0px 13px #99AAAA;
+  text-shadow: 0px 7px 12px #99AAAA;
+  box-shadow: 0px 7px 7px #666699;
 }
+
 
 .page_content {
   padding-top: 14%;
 }
+
+h1 {
+  font-family: 'Freckle Face', cursive;
+  color: #666699;
+  text-shadow: 0px 2px 5px yellow;
+}
+
+
+
+
+
+
+
