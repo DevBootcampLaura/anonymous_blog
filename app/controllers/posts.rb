@@ -18,6 +18,12 @@ get "/edit_post/:post_id" do
   erb :edit_post
 end
 
+get "/edit_post/:post_id/error" do
+  @post = Post.find_by_id(params[:post_id])
+  @error = "The post you have created is invalid. Title and post fields may not be empty."
+  erb :edit_post
+end
+
 get "/post/:post_id" do
   @p = Post.find_by_id(params[:post_id])
   erb :post
@@ -67,14 +73,17 @@ post "/edit_post" do
   @post = Post.find_by_id(params[:id])
   @post.update_attributes(params[:post])
 
-  params[:tag].values.join.split(" ").each do |c|
-    if @post.tags.find_by_category(c.strip) == nil
-      @post.tags << Tag.find_or_create_by_category(c.strip)
+  if @post.valid?
+    params[:tag].values.join.split(" ").each do |c|
+      if @post.tags.find_by_category(c.strip) == nil
+        @post.tags << Tag.find_or_create_by_category(c.strip)
+      end
     end
+    @post.save
+    redirect to "/post/#{@post.id}"
+  else
+    redirect to "/edit_post/#{@post.id}/error"
   end
-
-  @post.save
-  redirect to "/post/#{@post.id}"
 end
 
 

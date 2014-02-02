@@ -1,4 +1,5 @@
 <div class="container">
+	<p><%= "#{@error}" %></p>
 	<form action="/edit_post" method="post"><br>
 		<input type="hidden" name="id" value="<%= "#{@post.id}" %>">
 		<%= erb :_form_fields, layout: false %>
