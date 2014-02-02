@@ -1,11 +1,6 @@
 <div class="container">
 	<form action="/create_post" method="post"><br>
-		Title:<input type="text" name="title"><br>
-		Content:<br>
-		<textarea cols="40" rows="5" name="body">
-		</textarea><br>
-		Tags:<input type="text" name="category"><br>
-		<input type="submit" value="Create My Post!"><br>
+		<%= erb :_form_fields, layout: false %>
 	</form><br>
 	<a href="../">Return Home</a>
 </div>

@@ -1,11 +1,12 @@
-<div class="container">
-	<% @posts.each do |post| %>
-		<h2><%= "#{post.title}" %></h2>
-		<p><%= "#{post.author}" %></p>
-		<p><%= "#{post.body}" %></p>
-		Tags: <% post.tags.map do |t| %>
-					<%= "#{t.category}" %>
-			  <% end %><br><br>
+
+<% @posts.each do |post| %>
+  <div class="container">
+	<h2><%= "#{post.title}" %></h2>
+	<p><%= "#{post.author}" %></p>
+	<p><%= "#{post.body}" %></p>
+	Tags: <% post.tags.map do |t| %>
+			<%= "#{t.category}" %>
+		  <% end %><br><br>
+	  </div>
 	<% end %>
 	<a href="../">Return Home</a>
-</div>

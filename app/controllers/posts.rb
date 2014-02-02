@@ -1,41 +1,16 @@
 require 'pry'
 
+
+
+# get routes ====================================
+
 get "/create_post" do
 	erb :create_post
 end
 
-post "/create_post" do
-  p = Post.create(title: params[:title], author: "anonymous", 
-               body: params[:body])
-
-  params[:category].split(",").each do |c|
-    p.tags << Tag.find_or_create_by_category(c.strip)
-  end
-
-  redirect to "/"
-end
-
-post "/get_post" do
-  redirect to "/edit_post/#{params[:id]}"
-end
-
-post "/post" do
-  redirect to "/post/#{params[:id]}"
-end
-
 get "/edit_post/:post_id" do
-  @p = Post.find_by_id(params[:post_id])
+  @post = Post.find_by_id(params[:post_id])
   erb :edit_post
-end
-
-post "/edit_post" do
-  @p = Post.find_by_id(params[:id])
-  @p.update_attributes(title: params[:title], body: params[:body])
-  params[:category].split(",").each do |c|
-    @p.tags << Tag.find_or_create_by_category(c.strip)
-  end
-  @p.save
-  redirect to "/"
 end
 
 get "/post/:post_id" do
@@ -47,10 +22,6 @@ get "/view_all" do
   erb :view_all
 end
 
-post "/tag" do
-  redirect to "/tag/#{params[:category]}"
-end
-
 get "/tag/:category" do
   tag = Tag.find_by_category(params[:category])
   @posts = []
@@ -60,6 +31,49 @@ get "/tag/:category" do
 
   erb :tag
 end
+
+
+
+# post routes =====================================
+
+post "/create_post" do
+  p = Post.create(params[:post])
+
+  params[:tag].values.join.split(" ").each do |c|
+    p.tags << Tag.find_or_create_by_category(c.strip)
+  end
+
+  redirect to "/post/#{p.id}"
+end
+
+post "/get_post" do
+  redirect to "/edit_post/#{params[:id]}"
+end
+
+post "/post" do
+  redirect to "/post/#{params[:id]}"
+end
+
+post "/edit_post" do
+  @post = Post.find_by_id(params[:id])
+  @post.update_attributes(params[:post])
+
+  params[:tag].values.join.split(" ").each do |c|
+    if @post.tags.find_by_category(c.strip) == nil
+      @post.tags << Tag.find_or_create_by_category(c.strip)
+    end
+  end
+
+  @post.save
+  redirect to "/post/#{@post.id}"
+end
+
+
+post "/tag" do
+  redirect to "/tag/#{params[:category]}"
+end
+
+
 
 
 
