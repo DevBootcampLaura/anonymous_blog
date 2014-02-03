@@ -1,6 +1,6 @@
 .container {
   margin: 0px auto;
-  margin-top: -47%;
+  margin-top: -48%;
   width: 60%;
   height: 60%;
   padding: 10%;
@@ -85,11 +85,13 @@ h1 {
   display: inline-block;
   width: 49%;
   padding-left: 5%;
+  margin-bottom: 18%;
   font-family: 'Freckle Face', sans-serif;
 }
 .control_4{
   display: inline-block;
   width: 49%;
+  margin-top: 18%;
   padding-left: 15%;
   font-family: 'Freckle Face', sans-serif;
 }
