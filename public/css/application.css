@@ -1,9 +1,13 @@
 .container {
   margin: 0px auto;
-  width: 600px;
-  padding: 40px 40px 40px 40px;
+  margin-top: -50%;
+  width: 60%;
+  height: 60%;
+  padding: 10%;
   border: 1px dotted yellow;
   border-radius: 50%;
+  background-color: #FFFFAA;
+  box-shadow: 0px 30px 40px #FFFFAA;
 }
 
 th {
@@ -11,25 +15,31 @@ th {
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
   background: url('../paper.png');
   background-repeat: repeat;
   opacity: 0.7;
 }
 
+.content {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 0px;
+  height: 100%;
+
+}
+
 .color {
   background-color: #99AAAA;
   height: 100%;
-  padding-bottom: 30%;
+  padding-bottom: 40%;
 }
 
 
 .header a {
   position: fixed;
   width: 100%;
-  padding-left: 28%;
+  margin-right: 15%;
+  padding-left: 15%;
   padding-top: 2%;
   padding-bottom: 2%;
   background-color: #666699;
@@ -41,49 +51,73 @@ body {
   -webkit-text-stroke-color: yellow;
   color: transparent;
   text-shadow: 7px 7px 7px #99AAAA;
-  box-shadow: 0px 7px 7px #666699;
+  box-shadow: -20px 30px 40px #666699;
 }
 
 
 .page_content {
-  padding-top: 15%;
+  padding-top: 40%;
 }
 
 h1 {
   font-family: 'Freckle Face', sans-serif;
-  font-size: 25px;
+  font-size: 4em;
   width: 100%;
   text-align: center;
-  color: #666699;
-  text-shadow: 0px 2px 5px yellow;
+  color: #FFFF00;
+  text-shadow: 0px 2px 10px #666699;
+  opacity: 1;
 }
 
 .control_1{
   display: inline-block;
   width: 44%;
   padding-left: 0;
+  font-family: 'Freckle Face', sans-serif;
 }
 .control_2{
   display: inline-block;
   width: 44%;
-  padding-left: 10%
+  padding-left: 10%;
+  font-family: 'Freckle Face', sans-serif;
 }
 .control_3{
   display: inline-block;
   width: 49%;
   padding-left: 5%;
+  font-family: 'Freckle Face', sans-serif;
 }
 .control_4{
   display: inline-block;
   width: 49%;
   padding-left: 15%;
+  font-family: 'Freckle Face', sans-serif;
 }
 .control_5{
   display: inline-block;
   width: 100%;
   padding-left: 30%;
+  font-family: 'Freckle Face', sans-serif;
 }
 
+input.button {
+  font-family: 'The Girl Next Door', cursive;
+  color: yellow;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0px 5px 5px #666699;
+}
+
+.container_forms {
+  width: 80%;
+  height: 60%;
+  padding: 10%;
+  border: 1px dotted yellow;
+  border-radius: 50%;
+  background-color: #FFFFAA;
+  box-shadow: 0px 30px 40px #FFFFAA;
+}
 
 
 
