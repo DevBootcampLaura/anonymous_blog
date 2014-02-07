@@ -7,8 +7,8 @@ class PostTags < ActiveRecord::Migration
   		t.timestamps
   	end
 
-  	add_index :post_tags, :post
-  	add_index :post_tags, :tag
+  	add_index :post_tags, :post_id
+  	add_index :post_tags, :tag_id
   end
 
 end

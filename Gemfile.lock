@@ -19,6 +19,7 @@ GEM
     arel (4.0.2)
     atomic (1.1.14)
     backports (3.5.0)
+    bcrypt-ruby (3.1.2)
     builder (3.1.4)
     coderay (1.1.0)
     daemons (1.1.9)
@@ -78,6 +79,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
+  bcrypt-ruby
   faker
   pg
   pry
