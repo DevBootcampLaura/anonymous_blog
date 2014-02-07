@@ -1,4 +1,4 @@
-.container {
+/*.container {
   margin: 0px auto;
   margin-top: -48%;
   width: 60%;
@@ -8,7 +8,7 @@
   border-radius: 50%;
   background-color: #FFFFAA;
   box-shadow: 0px 30px 40px #FFFFAA;
-}
+}*/
 
 th {
   text-align: left;
@@ -20,43 +20,40 @@ body {
   opacity: 0.7;
 }
 
-.content {
-  margin-left: 15%;
-  margin-right: 15%;
-  padding: 0px;
-  height: 100%;
-
-}
-
-.color {
-  background-color: #99AAAA;
-  height: 100%;
-  padding-bottom: 30%;
+.header {
+  position: fixed;
+  padding-top: 3%;
+  width: 100%;
+  background-color: #666699;
+  box-shadow: 0px 40px 30px #666699;
 }
 
 
 .header a {
-  position: fixed;
-  width: 100%;
-  margin-right: 15%;
-  padding-left: 15%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  background-color: #666699;
+  position: relative; 
+  float: left;
+  margin-left: 3%;
   text-decoration: none; 
   font-family: 'Freckle Face', serif;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 100;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: yellow;
   color: transparent;
   text-shadow: 7px 7px 7px #99AAAA;
-  box-shadow: -20px 30px 40px #666699;
+}
+
+.control {
+  font-family: 'Freckle Face', sans-serif;
+  float: left;
+  position: relative;
+  padding-left: 4%;
+
 }
 
 
 .page_content {
-  padding-top: 40%;
+  padding-top: 20%;
 }
 
 h1 {
@@ -65,50 +62,19 @@ h1 {
   width: 100%;
   text-align: center;
   color: #FFFF00;
-  text-shadow: 0px 2px 10px #666699;
+  text-shadow: 0px 5px 20px #666699;
   opacity: 1;
 }
 
-.control_1{
-  display: inline-block;
-  width: 44%;
-  padding-left: 0;
-  font-family: 'Freckle Face', sans-serif;
-}
-.control_2{
-  display: inline-block;
-  width: 44%;
-  padding-left: 10%;
-  font-family: 'Freckle Face', sans-serif;
-}
-.control_3{
-  display: inline-block;
-  width: 49%;
-  padding-left: 5%;
-  margin-bottom: 18%;
-  font-family: 'Freckle Face', sans-serif;
-}
-.control_4{
-  display: inline-block;
-  width: 49%;
-  margin-top: 18%;
-  padding-left: 15%;
-  font-family: 'Freckle Face', sans-serif;
-}
-.control_5{
-  display: inline-block;
-  width: 100%;
-  padding-left: 30%;
-  font-family: 'Freckle Face', sans-serif;
-}
 
 input.button {
   font-family: 'The Girl Next Door', cursive;
   color: yellow;
   border: none;
   border-radius: 25px;
-  padding: 10px;
+  padding: 2%;
   box-shadow: 0px 5px 5px #666699;
+  background-color: #666699;
 }
 
 .container_forms {

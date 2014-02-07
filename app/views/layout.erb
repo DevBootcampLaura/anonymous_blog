@@ -26,16 +26,53 @@
     <div class="title">
       <a href="../">Bloggonit'</a>
     </div>
-  </div>
+
+ 
+    <div class="control">
+     <form name="create" action="/create_post" method="get">
+       <input class="button" type="submit" value="Create Post">
+     </form><br>
+    </div>
+
+    <div class="control">
+     <form name="read" action="/view_all" method="get">
+       <input class="button" type="submit" value="Read The Blog">
+     </form><br>
+    </div>
+
+
+    <div class="control">
+     <form name="view" action="/post" method="post">
+       Post Number:<input type="text" size="1" name="id">
+       <input class="button" type="submit" value="View Post">
+     </form><br>
+    </div>
+
+    <div class="control">
+     <form name="tag" action="/tag" method="post">
+       Tag:<input type="text" size="2" name="category">
+       <input class="button" type="submit" value="Tag Search">
+     </form><br>
+    </div>
+
+
+    <div class="control">
+     <form name="edit" action="/get_post" method="post">
+       Post Number:<input type="text" size="1" name="id">
+       <input class="button" type="submit" value="Edit Post">
+     </form><br>
+    </div>
+
+</div>
 
   <div class="content">
-    <div class="color"> 
-      <div class="page_content">
-        <%= yield %>
-      </div>
-
-
+     
+    <div class="page_content">
+      <%= yield %>
     </div>
+
+
+    
 
 
   </div>
